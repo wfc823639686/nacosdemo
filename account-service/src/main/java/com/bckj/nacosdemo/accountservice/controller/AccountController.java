@@ -40,10 +40,7 @@ public class AccountController {
 
     @PostMapping("save")
     public Object save(Company company) {
-        if (company.getId() == 0)
-            return companyService.save(company);
-        else
-            return companyService.updateById(company);
+        return companyService.saveOrUpdate(company);
     }
 
     @GetMapping("getById")
